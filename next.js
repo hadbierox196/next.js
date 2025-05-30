@@ -256,7 +256,7 @@ body {
   }
 }
 
-// app/lib/kv.js
+// lib/kv.js
 import { kv } from '@vercel/kv';
 
 export async function createPost(type, data) {
@@ -728,7 +728,7 @@ export default function Home() {
 }
 
 // app/api/posts/route.js
-import { getPosts, createPost } from '../../lib/kv';
+import { getPosts, createPost } from '../../../lib/kv';
 import { NextResponse } from 'next/server';
 
 export async function GET() {
@@ -751,7 +751,7 @@ export async function POST(request) {
 }
 
 // app/api/posts/[id]/reply/route.js
-import { addReply } from '../../../../lib/kv';
+import { addReply } from '../../../lib/kv';
 import { NextResponse } from 'next/server';
 
 export async function POST(request, { params }) {
@@ -770,7 +770,7 @@ export async function POST(request, { params }) {
 }
 
 // app/api/posts/[id]/vote/route.js
-import { voteOnPoll } from '../../../../lib/kv';
+import { voteOnPoll } from '../../../lib/kv';
 import { NextResponse } from 'next/server';
 
 export async function POST(request, { params }) {
